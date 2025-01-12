@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom class to hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/*scrollbar style*/
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(211, 211, 211, 0.326);
+  border-radius: 5px;
+}
+
+.sidebar:hover::-webkit-scrollbar-thumb {
+  background: #454545;
+}
+
+.rounded-background-home {
+  border-radius: 0rem 0rem 40rem 40rem;
+}
+
+.rounded-background-pages {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* height: 90vh; */
+  border-radius: 0rem 0rem 100rem 100rem;
+}
+
+.active {
+  @apply border-b-[1.2px] border-spacing-12 border-secondary dark:text-red-500 text-secondary font-bold;
+}
+
+.Landing-bg {
+  background: url(/cover2.jpg) no-repeat center / cover;
+}
+
+.services-bg {
+  background: url(/Porto-October/IMG_0025.JPG) no-repeat center / cover;
+}
+
+.findConstructionTeam-bg {
+  background: url(/IMG_20210809_144241.jpg) no-repeat center / cover;
+}
+
+.aboutUs-page-bg {
+  background: url(/Porto-October/IMG_20171019_160406.jpg) no-repeat center /
+    cover;
+}
+
+.contactUs-page-bg {
+  background: url(/Porto-October/IMG_0053.JPG) no-repeat center / cover;
+}
+
+hr {
+  height: 1.4px;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+}
+
+.underline {
+  color: #141414;
+  height: 1.5px;
+  margin-top: 0.7rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  @apply font-inter;
+}
+
+.btn-primary {
+  @apply py-3 md:py-4 bg-secondary dark:bg-zinc-900 dark:text-white border-[1px] border-[#efefef22] text-white rounded-xl md:rounded-2xl shadow-lg shadow-black font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;
+}
+
+.btn-tertiary {
+  @apply px-6 md:px-[50px] lg:px-[72px] py-2 md:py-5 bg-secondary rounded-lg md:rounded-2xl shadow-sm shadow-primary text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;
+}
+
+.img {
+  @apply object-cover w-full h-full;
+}
+
+.scale-animation {
+  @apply hover:scale-125 transition-all duration-700;
+}
+
+.font-heading {
+  @apply md:text-6xl text-4xl font-roboto text-gray-800 font-bold;
+}
+
+.font-title {
+  @apply md:text-2xl text-center text-lg text-gray-800;
+}
+
+.font-normal {
+  @apply text-sm md:text-base;
+}
+
+.custom-swiper-button-next,
+.custom-swiper-button-prev {
+  /* color: #fff; */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.custom-swiper-button-next {
+  right: 10px;
+}
+
+.custom-swiper-button-prev {
+  left: 10px;
+}
+
+.custom-swiper-button-next::after,
+.custom-swiper-button-prev::after {
+  font-family: 'Swiper';
+  font-size: 20px;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: 0;
+  text-transform: none;
+  content: '';
+}
+
+.custom-swiper-button-next:hover,
+.custom-swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.backdrop-blur-custom {
+  -webkit-backdrop-filter: blur(3rem); /* Safari */
+  backdrop-filter: blur(3rem); /* Other browsers */
+}
+
+.backdrop-blur-custom2 {
+  -webkit-backdrop-filter: blur(5rem); /* Safari */
+  backdrop-filter: blur(5rem); /* Other browsers */
+}
+
+.overlay {
+  border-image: fill 0 linear-gradient(#0001, #000);
+}
+
+.customSwiper {
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+}
+
+.customSlide {
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.customSwiper .swiper-slide-active .customSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.customSwiper .swiper-slide-prev .customSlide,
+.customSwiper .swiper-slide-next .customSlide {
+  opacity: 0.5;
+  transform: translateX(-50%);
+}
+
+.mySwiper .thumbs {
+  width: 25%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+/* Loading Style */
+.loader {
+  width: 50px;
+  aspect-ratio: 1.154;
+  position: relative;
+  background: conic-gradient(
+    from 120deg at 50% 64%,
+    #0000,
+    #ff1919 1deg 120deg,
+    #0000 121deg
+  );
+  animation: l27-0 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  transform-origin: 50% 66%;
+  animation: l27-1 1.5s infinite;
+}
+
+.loader:after {
+  --s: -1;
+}
+
+@keyframes l27-0 {
+  0%,
+  30% {
+    transform: rotate(0);
+  }
+
+  70% {
+    transform: rotate(120deg);
+  }
+
+  70.01%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes l27-1 {
+  0% {
+    transform: rotate(calc(var(--s, 1) * 120deg)) translate(0);
+  }
+
+  30%,
+  70% {
+    transform: rotate(calc(var(--s, 1) * 120deg))
+      translate(calc(var(--s, 1) * -5px), 10px);
+  }
+
+  100% {
+    transform: rotate(calc(var(--s, 1) * 120deg)) translate(0);
+  }
+}
