@@ -18,6 +18,9 @@ export const getProgramsQuery = groq`*[_type == "programs"] | order(programName 
     programName,
     slug,
     description,
+     aboutTrip[] {
+      details,
+    },
     numberOfDays,
     destinations,
     images,
@@ -30,6 +33,9 @@ export const getProgram = groq`*[_type == "programs" && slug.current == $slug][0
     programName,
     slug,
     description,
+     aboutTrip[] {
+      details,
+    },
     numberOfDays,
     destinations,
     images,

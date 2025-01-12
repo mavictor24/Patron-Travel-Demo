@@ -32,7 +32,7 @@ const Destinations: FC<Props> = (props) => {
           depth={150} // Set custom depth
           modifier={1.5} // Set custom modifier
           slideShadows={true} // Enable slide shadows
-          containerClassName="w-[100vw] h-[45vh] md:w-[85vw] md:h-[65vh] lg:w-[90vw] lg:h-[60vh] flex items-center justify-center"
+          containerClassName="w-[100vw] h-[45vh] md:w-[85vw] md:h-[65vh] lg:w-[95vw] lg:h-[55vh] flex items-center justify-center"
           breakpoints={{
             320: { slidesPerView: 2, spaceBetween: 10 },
             640: { slidesPerView: 2, spaceBetween: 20 },

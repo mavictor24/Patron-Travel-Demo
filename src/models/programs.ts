@@ -14,11 +14,16 @@ type Slug = {
   current: string;
 };
 
+type AboutTrip = {
+  details: string;
+};
+
 export type Program = {
   _id: string;
   programName: string;
   slug: Slug;
   images: Image[];
+  aboutTrip: AboutTrip[];
   coverImage: CoverImage;
   description: string;
   numberOfDays: number;

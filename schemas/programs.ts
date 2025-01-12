@@ -27,6 +27,26 @@ const projects = {
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'aboutTrip',
+      title: 'About Trip',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'Days',
+          fields: [
+            {
+              name: 'details',
+              title: 'Details',
+              type: 'text',
+              validation: (Rule) =>
+                Rule.max(500).error('Maximum 500 characters allowed'),
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'numberOfDays',
       title: 'Number Of Days',
       type: 'number',

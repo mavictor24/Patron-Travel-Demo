@@ -62,6 +62,44 @@ export const destinations: Destination[] = [
   },
 ];
 
+export const testimonials = [
+  {
+    description:
+      'Immerse yourself in the vast Sinai Desert with camel treks, Bedouin feasts, and nights spent under a billion stars. Experience the serenity and wonder of a truly untouched landscape.',
+    name: 'Desert Safaris and Stargazing',
+    num: '01',
+    src: '/8.png',
+  },
+  {
+    description:
+      'Dive into the vibrant underwater world of the Red Sea, teeming with coral reefs and exotic marine life. Ideal for adventurers and nature lovers..',
+    name: 'Snorkeling and Diving in the Red Sea',
+    num: '02',
+    src: '/7.png',
+  },
+  {
+    description:
+      "Sail along the lifeline of ancient Egypt on a luxury cruise, stopping at iconic temples like Karnak, Luxor, and Philae. Witness the Nile's breathtaking sunsets from the comfort of a world-class vessel.",
+    name: 'Nile Cruises: A Journey Through Time',
+    num: '03',
+    src: '/9.png',
+  },
+  {
+    description:
+      'Visit the Great Pyramids of Giza, the Sphinx, and the Grand Egyptian Museum. Stroll through bustling bazaars, savor local cuisine, and engage with Egypt’s vibrant traditions.',
+    name: 'Historical Marvels and Cultural Immersion',
+    num: '04',
+    src: '/6.png',
+  },
+  {
+    description:
+      'Tucked beneath Mount Sinai, St. Catherine’s Monastery is a sacred gem, where ancient history, spiritual tranquility, and stunning beauty converge in one unforgettable experience.',
+    name: 'Jewel of Sinai - St. Catherine’s Monastery',
+    num: '05',
+    src: '/monastero-di-santa-caterina.jpg',
+  },
+];
+
 // <>------------------<>
 // 0-Page Links
 //<>-------------------<>
