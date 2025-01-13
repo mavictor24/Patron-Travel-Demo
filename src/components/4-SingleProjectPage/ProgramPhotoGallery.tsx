@@ -1,7 +1,7 @@
 'use client';
 
-import { Image as ImageType } from '@/models/project';
-import { CoverImage } from '@/models/project';
+import { Image as ImageType } from '@/models/programs';
+import { CoverImage } from '@/models/programs';
 import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { MdCancel } from 'react-icons/md';
