@@ -44,7 +44,7 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="max-w-sm md:max-w-6xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
+    <div className="max-w-sm md:max-w-6xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-10">
       <div className="flex flex-col-reverse md:grid md:grid-cols-2 lg:gap-20 gap-1">
         {/* Left Section */}
         <div className="flex justify-between flex-col lg:py-4 py-0">
@@ -68,14 +68,26 @@ export const AnimatedTestimonials = ({
             }}
           >
             <div className="relative lg:-left-12 -left-3">
-              <p className="text-7xl font-serif text-black/10 dark:text-white/20">
+              <p
+                data-aos="fade-right"
+                data-aos-duration="800"
+                className="text-8xl font-serif text-primary/20 dark:text-white/20"
+              >
                 {testimonials[active].num}
               </p>
             </div>
-            <h3 className="text-4xl font-bold dark:text-white text-black">
+            <h3
+              data-aos="fade-right"
+              data-aos-duration="800"
+              className="lg:text-4xl text-2xl font-bold text-black"
+            >
               {testimonials[active].name}
             </h3>
-            <motion.p className="text-xl text-gray-500 mt-5 dark:text-neutral-300">
+            <motion.p
+              data-aos="fade-right"
+              data-aos-duration="800"
+              className="lg:text-xl text-base text-gray-500 mt-5 dark:text-neutral-300"
+            >
               {testimonials[active].description
                 .split(' ')
                 .map((word, index) => (
@@ -123,7 +135,11 @@ export const AnimatedTestimonials = ({
 
         {/* Right Section */}
         <div>
-          <div className="relative h-80 w-full">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            className="relative h-80 w-full"
+          >
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div

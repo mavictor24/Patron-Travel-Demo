@@ -54,7 +54,7 @@
 }
 
 .Landing-bg {
-  background: url(/cover2.jpg) no-repeat center / cover;
+  background: url(/steve-long-i6P1H0By5Kk-unsplash.jpg) no-repeat center / cover;
 }
 
 .services-bg {
@@ -120,7 +120,7 @@ p {
 }
 
 .font-heading {
-  @apply md:text-6xl text-4xl font-roboto text-gray-800 font-bold;
+  @apply md:text-6xl text-3xl font-serif text-secondary font-bold;
 }
 
 .font-title {

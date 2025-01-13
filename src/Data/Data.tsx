@@ -62,7 +62,7 @@ export const destinations: Destination[] = [
   },
 ];
 
-export const testimonials = [
+export const Trips = [
   {
     description:
       'Immerse yourself in the vast Sinai Desert with camel treks, Bedouin feasts, and nights spent under a billion stars. Experience the serenity and wonder of a truly untouched landscape.',
@@ -112,7 +112,7 @@ interface Links {
 
 export const Links: Links[] = [
   { id: 1, title: 'Home', href: '/' },
-  { id: 2, title: 'Projects', href: '/projects' },
+  { id: 2, title: 'Programs', href: '/programs' },
   { id: 3, title: 'Contact Us', href: '/contactUs' },
 ];
 

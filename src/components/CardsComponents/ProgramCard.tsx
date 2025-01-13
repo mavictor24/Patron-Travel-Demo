@@ -29,7 +29,7 @@ const ProgramCard: FC<Props> = (props) => {
             loading="eager"
           />
           {/* Overlay */}
-          <Link href={`projects/${slug.current}`}>
+          <Link href={`programs/${slug.current}`}>
             <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center z-10 rounded-lg">
               <div className=" text-center text-white w-[90%] flex flex-col gap-y-3">
                 <h1 className="text-xl">{programName}</h1>

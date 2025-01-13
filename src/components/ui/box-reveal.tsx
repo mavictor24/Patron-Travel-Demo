@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useContext } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import ThemeContext from '@/Context/themeContext';
 
 interface BoxRevealProps {
   children: JSX.Element;
@@ -18,7 +17,6 @@ export const BoxReveal = ({
   boxColor,
   duration,
 }: BoxRevealProps) => {
-  const { darkTheme } = useContext(ThemeContext); // Consume the darkTheme value
   const mainControls = useAnimation();
   const slideControls = useAnimation();
 
@@ -36,7 +34,6 @@ export const BoxReveal = ({
   }, [isInView, mainControls, slideControls]);
 
   // Set dynamic boxColor based on darkTheme or provided boxColor
-  const dynamicBoxColor = boxColor || (darkTheme ? 'black' : 'white');
 
   return (
     <div ref={ref} style={{ position: 'relative', width, zIndex: '1' }}>
@@ -67,7 +64,7 @@ export const BoxReveal = ({
           left: 0,
           right: 0,
           zIndex: 20,
-          background: dynamicBoxColor, // Use dynamic boxColor here
+          background: 'white', // Use dynamic boxColor here
         }}
       />
     </div>

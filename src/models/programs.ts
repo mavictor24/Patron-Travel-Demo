@@ -15,6 +15,7 @@ type Slug = {
 };
 
 type AboutTrip = {
+  dayNumber: number;
   details: string;
 };
 

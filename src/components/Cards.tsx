@@ -17,6 +17,7 @@ interface CardsProps {
   slides: {
     coverImage: string;
     programName: string;
+    numberOfDays: number;
   }[];
   initialSlide?: number;
   effect?: string;
@@ -38,7 +39,7 @@ const Cards: React.FC<CardsProps> = ({
   depth = 100,
   modifier = 1,
   slideShadows = true,
-  containerClassName = 'w-[90vw] h-[50vh] flex items-center justify-center',
+  containerClassName = 'w-[90vw] h-[60vh] flex items-center justify-center',
   breakpoints = {
     320: { slidesPerView: 1, spaceBetween: 10 },
     640: { slidesPerView: 2, spaceBetween: 15 },
@@ -65,7 +66,10 @@ const Cards: React.FC<CardsProps> = ({
         className="w-full h-full"
       >
         {slides.map((slide, i) => (
-          <SwiperSlide key={i} className="rounded-xl shadow-lg overflow-hidden">
+          <SwiperSlide
+            key={i}
+            className="rounded-xl relative shadow-lg overflow-hidden"
+          >
             <Image
               src={slide.coverImage}
               alt={slide.programName}
@@ -75,7 +79,10 @@ const Cards: React.FC<CardsProps> = ({
             />
             <div className="absolute w-full h-[80vh] bottom-[-20vh] bg-gradient-to-t from-black/70 to-transparent z-0" />
             <div className="absolute bottom-0 left-0 right-0 text-white text-center p-4 font-bold">
-              {slide.programName}
+              <h2> {slide.programName}</h2>
+            </div>
+            <div className="absolute top-2 w-20 rotate-45 rounded-full bg-secondary/90 -right-3 text-white text-center p-2 font-bold">
+              <h4>{slide.numberOfDays} Days</h4>
             </div>
           </SwiperSlide>
         ))}

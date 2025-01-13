@@ -2,15 +2,12 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import ThemeContext from '@/Context/themeContext';
 import { useContext } from 'react';
 import { FaFacebook } from 'react-icons/fa6';
 // import { RiLinkedinFill } from 'react-icons/ri';
 import { Links } from '@/Data/Data';
 
 const Footer = () => {
-  const { darkTheme } = useContext(ThemeContext);
-
   return (
     <section className="py-3 dark:bg-zinc-950 bg-[#fdfdfd] pt-16 lg:pt-8">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -18,8 +15,8 @@ const Footer = () => {
           <div className="w-16 flex items-center justify-center">
             <Link href="/">
               <Image
-                src={`/MCC-LOGO.png`}
-                alt=""
+                src={``}
+                alt="logo"
                 width={100}
                 height={100}
                 loading="eager"
@@ -66,30 +63,20 @@ const Footer = () => {
             <br className="block lg:hidden" />
             <span className="font-semibold font-inter">
               {' '}
-              Modern Construction Company
+              Patron Travel Company
             </span>
           </p>
           <div className="flex items-center justify-center">
             <p className="dark:text-gray-100 text-sm">SITE BY</p>
             <div className="w-16">
               <Link href={'https://makend.vercel.app/'}>
-                {darkTheme ? (
-                  <Image
-                    src={`/batch-5---design-6-1__2_-removebg-preview.png`}
-                    alt="logo"
-                    width={100}
-                    height={100}
-                    className="img"
-                  />
-                ) : (
-                  <Image
-                    src={`/myLogo.png`}
-                    alt="logo"
-                    width={100}
-                    height={100}
-                    className="img"
-                  />
-                )}
+                <Image
+                  src={`/myLogo.png`}
+                  alt="logo"
+                  width={100}
+                  height={100}
+                  className="img"
+                />
               </Link>
             </div>
           </div>

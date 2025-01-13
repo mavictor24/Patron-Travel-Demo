@@ -33,8 +33,12 @@ const projects = {
       of: [
         {
           type: 'object',
-          name: 'Days',
           fields: [
+            {
+              name: 'dayNumber',
+              title: 'Day Number',
+              type: 'number',
+            },
             {
               name: 'details',
               title: 'Details',
@@ -85,10 +89,15 @@ const projects = {
           type: 'string',
           options: {
             list: [
-              { title: 'Sharm El-Sheikh', value: 'sharm el-sheikh' },
-              { title: 'Dahab', value: 'dahab' },
-              { title: 'Hurghada', value: 'hurghada' },
-              { title: 'Taba', value: 'taba' },
+              { title: 'Sharm el Sheihk', value: 'sharm el sheihk' },
+              { title: 'Cairo', value: 'cairo' },
+              { title: 'Alexandria', value: 'alexandria' },
+              { title: 'Luxor', value: 'luxor' },
+              { title: 'Aswan', value: 'aswan' },
+              { title: 'Minya', value: 'minya' },
+              { title: 'Assuit', value: 'assuit' },
+              { title: 'Sohag', value: 'sohag' },
+              { title: 'St. Catherine', value: 'st. catherine' },
             ],
           },
         },

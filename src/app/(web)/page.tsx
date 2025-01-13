@@ -2,18 +2,20 @@ import {
   LandingSection,
   Destinations,
   ContactUsSection,
-  AboutUsSection,
+  OurPhilosophySection,
   OurTrips,
+  WhoWeAre,
 } from '@/components/1-HomeComponents';
-import { getFeaturedProgram } from '@/libs/apis';
+import { getFeaturedPrograms } from '@/libs/apis';
 
 const Home = async () => {
-  const featuredProgram = await getFeaturedProgram();
+  const featuredProgram = await getFeaturedPrograms();
   return (
     <>
       <LandingSection />
-      <Destinations featuredProgram={featuredProgram} />
-      <AboutUsSection />
+      <Destinations featuredPrograms={featuredProgram} />
+      <WhoWeAre />
+      <OurPhilosophySection />
       <OurTrips />
       <ContactUsSection />
     </>
