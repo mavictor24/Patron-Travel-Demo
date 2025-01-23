@@ -1,15 +1,15 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Button from '../Button';
+import { Image } from '@nextui-org/image';
 import { motion } from 'framer-motion';
 import { BlurFade } from '../ui/blur-fade';
 
 const About = () => {
   return (
-    <section className="py-20 lg:px-28 px-5 space-y-14">
-      <div className="text-center pb-10">
+    <section className="py-20 lg:py-32 lg:px-16 px-5 space-y-14">
+      <div className="text-center pb-5">
         <BlurFade delay={0.25} inView>
           <h2
             data-aos="fade-up"
@@ -34,13 +34,14 @@ const About = () => {
           className="lg:w-1/2 w-full relative"
         >
           <Image
+            isBlurred
             src="/10.png"
             alt="Trip"
-            width={1000}
-            height={1000}
-            className="img rounded-xl"
+            width={500}
+            height={350}
+            className="img rounded-xl lg:m-5"
           />
-          <div className="absolute bg-white shadow-lg flex justify-center rounded-xl lg:w-[50%] w-[70%] py-3 lg:-bottom-10 -bottom-12 lg:-right-10 right-5">
+          <div className="absolute z-10 bg-white shadow-lg flex justify-center rounded-xl lg:w-[50%] w-[70%] py-3 lg:-bottom-10 -bottom-12 lg:-right-10 right-5">
             <p className="text-lg leading-tight">
               Exeptional adventures,
               <br />

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const OurTrips = () => {
   return (
-    <section className="lg:px-28 px-5 lg:py-32 py-10">
+    <section className="lg:px-16 px-5 lg:py-32 py-40 pt-10">
       <div className="text-center pb-10">
         <BlurFade delay={0.25} inView>
           <h2

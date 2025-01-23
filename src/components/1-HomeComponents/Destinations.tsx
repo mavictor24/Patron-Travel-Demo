@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { DestinationCards } from '..';
+import { Cards } from '..';
 import { Program } from '@/models/programs';
 
 type Props = {
@@ -15,7 +15,7 @@ const Destinations: FC<Props> = ({ featuredPrograms }) => {
   }));
 
   return (
-    <section className="relative bg-secondary flex flex-col items-center justify-center lg:h-[110vh] h-[95vh] rounded-[4rem] z-10 -mt-16 overflow-hidden">
+    <section className="relative bg-secondary flex flex-col items-center justify-center lg:h-[110vh] h-[95vh] rounded-[4rem] z-10 overflow-hidden">
       <main className="w-full h-full flex flex-col items-center justify-center gap-y-10">
         <h1
           data-aos="fade-up"
@@ -25,7 +25,7 @@ const Destinations: FC<Props> = ({ featuredPrograms }) => {
           Recommended <span className="text-primary">Popular</span> <br />
           Destinations
         </h1>
-        <DestinationCards
+        <Cards
           slides={slides}
           initialSlide={1} // Start with the first slide
           effect="coverflow"

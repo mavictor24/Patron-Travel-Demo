@@ -44,7 +44,7 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="max-w-sm md:max-w-6xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-10">
+    <div className="max-w-sm md:max-w-6xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 pt-10">
       <div className="flex flex-col-reverse md:grid md:grid-cols-2 lg:gap-20 gap-1">
         {/* Left Section */}
         <div className="flex justify-between flex-col lg:py-4 py-0">
@@ -67,22 +67,24 @@ export const AnimatedTestimonials = ({
               ease: 'easeInOut',
             }}
           >
-            <div className="relative lg:-left-12 -left-3">
-              <p
+            <div className="relative flex items-end justify-center lg:pt-0 pt-10">
+              <h3
                 data-aos="fade-right"
                 data-aos-duration="800"
-                className="text-8xl font-serif text-primary/20 dark:text-white/20"
+                className="lg:text-4xl text-2xl font-bold text-black"
               >
-                {testimonials[active].num}
-              </p>
+                {testimonials[active].name}
+              </h3>
+              <div className="absolute right-0">
+                <p
+                  data-aos="fade-right"
+                  data-aos-duration="800"
+                  className="text-8xl font-serif text-primary/10 "
+                >
+                  {testimonials[active].num}
+                </p>
+              </div>
             </div>
-            <h3
-              data-aos="fade-right"
-              data-aos-duration="800"
-              className="lg:text-4xl text-2xl font-bold text-black"
-            >
-              {testimonials[active].name}
-            </h3>
             <motion.p
               data-aos="fade-right"
               data-aos-duration="800"

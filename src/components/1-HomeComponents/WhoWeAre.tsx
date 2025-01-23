@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import React from 'react';
-import Image from 'next/image';
 import { BlurFade } from '../ui/blur-fade';
+import { Image } from '@nextui-org/react';
 import BoxReveal from '../ui/box-reveal';
 
 const WhoWeAre = () => {
@@ -18,7 +18,7 @@ const WhoWeAre = () => {
     // '/19.png',
   ];
   return (
-    <div className="max-w-sm md:max-w-7xl mx-auto overflow-hidden lg:py-40 py-24">
+    <div className="max-w-sm md:max-w-7xl mx-auto overflow-hidden lg:py-32 py-24">
       <BlurFade delay={0.25} inView>
         <div className="text-center space-y-12">
           <h2
@@ -68,9 +68,10 @@ const WhoWeAre = () => {
                 rotate: 0,
                 zIndex: 100,
               }}
-              className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
+              className="rounded-xl -mr-4 mt-4  flex-shrink-0 overflow-hidden"
             >
               <Image
+                isBlurred
                 src={image}
                 alt="bali images"
                 width="500"

@@ -1,10 +1,12 @@
 import {
   LandingSection,
   Destinations,
-  ContactUsSection,
   OurPhilosophySection,
   OurTrips,
   WhoWeAre,
+  FeaturedCities,
+  WhyYouChooseUs,
+  ContactUsSection,
 } from '@/components/1-HomeComponents';
 import { getFeaturedPrograms } from '@/libs/apis';
 
@@ -13,11 +15,13 @@ const Home = async () => {
   return (
     <>
       <LandingSection />
-      <Destinations featuredPrograms={featuredProgram} />
       <WhoWeAre />
+      <Destinations featuredPrograms={featuredProgram} />
       <OurPhilosophySection />
       <OurTrips />
-      <ContactUsSection />
+      <FeaturedCities />
+      {/* <WhyYouChooseUs /> */}
+      {/* <ContactUsSection /> */}
     </>
   );
 };

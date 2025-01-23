@@ -57,17 +57,16 @@
   background: url(/steve-long-i6P1H0By5Kk-unsplash.jpg) no-repeat center / cover;
 }
 
-.services-bg {
-  background: url(/Porto-October/IMG_0025.JPG) no-repeat center / cover;
+.featuredCitiesCover {
+  background: url(/cover.jpg) no-repeat center / cover;
 }
 
 .findConstructionTeam-bg {
   background: url(/IMG_20210809_144241.jpg) no-repeat center / cover;
 }
 
-.aboutUs-page-bg {
-  background: url(/Porto-October/IMG_20171019_160406.jpg) no-repeat center /
-    cover;
+.cities-bg {
+  background: url(/Sea.jpg) no-repeat center / cover;
 }
 
 .contactUs-page-bg {
@@ -221,18 +220,6 @@ p {
 }
 
 /* Loading Style */
-.loader {
-  width: 50px;
-  aspect-ratio: 1.154;
-  position: relative;
-  background: conic-gradient(
-    from 120deg at 50% 64%,
-    #0000,
-    #ff1919 1deg 120deg,
-    #0000 121deg
-  );
-  animation: l27-0 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
-}
 
 .loader:before,
 .loader:after {
@@ -277,5 +264,114 @@ p {
 
   100% {
     transform: rotate(calc(var(--s, 1) * 120deg)) translate(0);
+  }
+}
+
+.container {
+  width: 250px;
+  height: 250px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloud {
+  width: 250px;
+}
+
+.front {
+  padding-top: 45px;
+  margin-left: 25px;
+  display: inline;
+  position: absolute;
+  z-index: 11;
+  animation: clouds 8s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.back {
+  margin-top: -30px;
+  margin-left: 150px;
+  z-index: 12;
+  animation: clouds 12s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.right-front {
+  width: 45px;
+  height: 45px;
+  border-radius: 50% 50% 50% 0%;
+  background-color: #4c9beb;
+  display: inline-block;
+  margin-left: -25px;
+  z-index: 5;
+}
+
+.left-front {
+  width: 65px;
+  height: 65px;
+  border-radius: 50% 50% 0% 50%;
+  background-color: #4c9beb;
+  display: inline-block;
+  z-index: 5;
+}
+
+.right-back {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50% 50% 0%;
+  background-color: #4c9beb;
+  display: inline-block;
+  margin-left: -20px;
+  z-index: 5;
+}
+
+.left-back {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 0% 50%;
+  background-color: #4c9beb;
+  display: inline-block;
+  z-index: 5;
+}
+
+.sun {
+  width: 120px;
+  height: 120px;
+  background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
+  background: linear-gradient(to right, #fcbb04, #fffc00);
+  border-radius: 60px;
+  display: inline;
+  position: absolute;
+}
+
+.sunshine {
+  animation: sunshines 2s infinite;
+}
+
+@keyframes sunshines {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes clouds {
+  0% {
+    transform: translateX(15px);
+  }
+
+  50% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(15px);
   }
 }

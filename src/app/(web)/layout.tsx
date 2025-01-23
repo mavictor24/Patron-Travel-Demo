@@ -3,6 +3,7 @@ import { Roboto, Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
 import { Header, Footer } from '@/components';
 import { AOSProvider } from '@/components/Providers';
+import { NextUIProvider } from '@nextui-org/react';
 import './globals.css';
 
 // Import Swiper styles
@@ -38,14 +39,16 @@ export default function RootLayout({
         <link rel="shortcut icon" href="" type="image/png" />
       </head>
       <body className={roboto.className}>
-        <AOSProvider>
-          <main className="font-normal">
-            <Header />
-            {children}
-            <Footer />
-          </main>
-          <Toaster />
-        </AOSProvider>
+        <NextUIProvider>
+          <AOSProvider>
+            <main className="font-normal">
+              <Header />
+              {children}
+              <Footer />
+            </main>
+            <Toaster />
+          </AOSProvider>
+        </NextUIProvider>
       </body>
     </html>
   );

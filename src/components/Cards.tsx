@@ -3,10 +3,12 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
-import Image from 'next/image';
+import { Image } from '@nextui-org/image';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
+import Link from 'next/link';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 interface BreakpointConfig {
   slidesPerView: number;
@@ -15,9 +17,10 @@ interface BreakpointConfig {
 
 interface CardsProps {
   slides: {
-    coverImage: string;
-    programName: string;
-    numberOfDays: number;
+    coverImage?: string;
+    programName?: string;
+    numberOfDays?: number;
+    info?: string;
   }[];
   initialSlide?: number;
   effect?: string;
@@ -51,7 +54,6 @@ const Cards: React.FC<CardsProps> = ({
     <div className={containerClassName}>
       <Swiper
         effect={effect}
-        grabCursor={true}
         centeredSlides={true}
         initialSlide={initialSlide}
         coverflowEffect={{
@@ -71,19 +73,41 @@ const Cards: React.FC<CardsProps> = ({
             className="rounded-xl relative shadow-lg overflow-hidden"
           >
             <Image
+              isBlurred
+              isZoomed
               src={slide.coverImage}
               alt={slide.programName}
-              width={1000}
-              height={1000}
+              width={390}
+              height={350}
               className="w-full h-full object-cover"
             />
-            <div className="absolute w-full h-[80vh] bottom-[-20vh] bg-gradient-to-t from-black/70 to-transparent z-0" />
-            <div className="absolute bottom-0 left-0 right-0 text-white text-center p-4 font-bold">
-              <h2> {slide.programName}</h2>
+            <div className="absolute w-full h-[80vh] bottom-[-20vh] bg-gradient-to-t from-black/70 to-transparent z-10" />
+            <div className="absolute bottom-0 left-0 right-0 text-white text-center p-4 font-bold z-10">
+              <h2>{slide.programName}</h2>
             </div>
-            <div className="absolute top-2 w-20 rotate-45 rounded-full bg-secondary/90 -right-3 text-white text-center p-2 font-bold">
-              <h4>{slide.numberOfDays} Days</h4>
-            </div>
+
+            {slide.numberOfDays && (
+              <div className="absolute top-2 w-20 rotate-45 rounded-md bg-secondary/90 -right-3 text-white text-center p-2 font-bold z-10">
+                <h4>{slide.numberOfDays} Days</h4>
+              </div>
+            )}
+            {slide.info && (
+              <div className="absolute lg:space-y-3 space-y-2 backdrop-blur-sm w-full text-white rounded-md top-[86%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-left p-2 pb-3 px-3 font-bold z-10">
+                <div>
+                  <h4 className="text-sm line-clamp-2">{slide.info}</h4>
+                </div>
+                <div className="border-t border-gray-100 dark:border-gray-500" />
+                <Link
+                  href="/cities"
+                  className="flex items-center justify-between w-full"
+                >
+                  <div>
+                    <p className="text-sm font-medium text-white">Explore</p>
+                  </div>
+                  <FaExternalLinkAlt />
+                </Link>
+              </div>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
