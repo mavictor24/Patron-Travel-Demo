@@ -40,19 +40,19 @@ const FeaturedCities = () => {
               </Link>
             </div>
           </div>
-          <div className="lg:w-3/5 w-full relative overflow-hidden">
+          <div className="lg:w-3/5 w-full mx-auto relative overflow-hidden">
             <Cards
               slides={FeaturedCitiesData}
-              initialSlide={0} // Start with the first slide
+              initialSlide={1} // Start with the first slide
               effect="coverflow"
               rotate={0} // Set custom rotate for coverflow effect
               stretch={0} // Set custom stretch
               depth={0} // Set custom depth
               modifier={1.5} // Set custom modifier
               slideShadows={false} // Enable slide shadows
-              containerClassName="w-[120vw] h-[40vh] md:w-[85vw] md:h-[65vh] lg:w-[80vw] lg:h-[55vh] flex items-center justify-cente my-10"
+              containerClassName="w-[125vw] h-[40vh] md:w-[85vw] md:h-[65vh] lg:w-[80vw] lg:h-[55vh] flex items-center justify-center my-10"
               breakpoints={{
-                320: { slidesPerView: 2, spaceBetween: 10 },
+                320: { slidesPerView: 1.7, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 20 },
                 1024: { slidesPerView: 3, spaceBetween: 20 },
                 1280: { slidesPerView: 3, spaceBetween: 20 },
