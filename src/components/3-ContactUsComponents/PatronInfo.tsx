@@ -7,6 +7,8 @@ const PatronInfo = () => {
       {contactData.map((item, index) => (
         <div
           key={index}
+          data-aos="fade-right"
+          data-aos-duration="800"
           className={`overflow-hidden bg-white dark:bg-zinc-950 border dark:border-zinc-900 rounded-3xl flex items-center justify-center ${index === 1 ? 'absolute right-3 -bottom-32 w-52 h-36' : 'w-80 -mt-12'} `}
         >
           <div className="p-6">
