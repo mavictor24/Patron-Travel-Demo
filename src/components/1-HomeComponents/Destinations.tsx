@@ -15,7 +15,7 @@ const Destinations: FC<Props> = ({ featuredPrograms }) => {
   }));
 
   return (
-    <section className="relative bg-secondary flex flex-col items-center justify-center lg:h-[110vh] h-[95vh] rounded-[4rem] z-10 overflow-hidden">
+    <section className="relative bg-secondary flex flex-col items-center justify-center lg:h-[110vh] h-[95vh] rounded-3xl z-10 overflow-hidden">
       <main className="w-full h-full flex flex-col items-center justify-center gap-y-10">
         <h1
           data-aos="fade-up"
@@ -27,7 +27,6 @@ const Destinations: FC<Props> = ({ featuredPrograms }) => {
         </h1>
         <Cards
           slides={slides}
-          initialSlide={1} // Start with the first slide
           effect="coverflow"
           rotate={0} // Set custom rotate for coverflow effect
           stretch={20} // Set custom stretch
@@ -36,10 +35,10 @@ const Destinations: FC<Props> = ({ featuredPrograms }) => {
           slideShadows={true} // Enable slide shadows
           containerClassName="w-[120vw] h-[40vh] md:w-[85vw] md:h-[65vh] lg:w-[95vw] lg:h-[55vh] flex items-center justify-center"
           breakpoints={{
-            320: { slidesPerView: 2, spaceBetween: 10 },
-            640: { slidesPerView: 2, spaceBetween: 20 },
-            1024: { slidesPerView: 3, spaceBetween: 20 },
-            1280: { slidesPerView: 3, spaceBetween: 25 },
+            320: { slidesPerView: 2, spaceBetween: 10, initialSlide: 1 },
+            640: { slidesPerView: 2, spaceBetween: 20, initialSlide: 1 },
+            1024: { slidesPerView: 3, spaceBetween: 20, initialSlide: 1 },
+            1280: { slidesPerView: 3, spaceBetween: 25, initialSlide: 1 },
           }}
         />
       </main>

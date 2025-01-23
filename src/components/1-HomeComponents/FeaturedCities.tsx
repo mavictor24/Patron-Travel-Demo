@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const FeaturedCities = () => {
   return (
-    <section className="featuredCitiesCover my-32">
+    <section className="featuredCitiesCover">
       <div className="w-full h-full gap-20 backdrop-brightness-[.3]">
         <main className="flex items-center justify-between py-10 flex-wrap">
           <div className="lg:w-2/5 w-full lg:space-y-10 space-y-5 pl-10 ">
@@ -43,7 +43,6 @@ const FeaturedCities = () => {
           <div className="lg:w-3/5 w-full mx-auto relative overflow-hidden">
             <Cards
               slides={FeaturedCitiesData}
-              initialSlide={1} // Start with the first slide
               effect="coverflow"
               rotate={0} // Set custom rotate for coverflow effect
               stretch={0} // Set custom stretch
@@ -52,10 +51,10 @@ const FeaturedCities = () => {
               slideShadows={false} // Enable slide shadows
               containerClassName="w-[125vw] h-[40vh] md:w-[85vw] md:h-[65vh] lg:w-[80vw] lg:h-[55vh] flex items-center justify-center my-10 lg:-ml-0 -ml-20"
               breakpoints={{
-                320: { slidesPerView: 1.7, spaceBetween: 10 },
-                640: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 3, spaceBetween: 20 },
-                1280: { slidesPerView: 3, spaceBetween: 20 },
+                320: { slidesPerView: 1.7, spaceBetween: 10, initialSlide: 0 },
+                640: { slidesPerView: 2, spaceBetween: 20, initialSlide: 0 },
+                1024: { slidesPerView: 3, spaceBetween: 20, initialSlide: 1 },
+                1280: { slidesPerView: 3, spaceBetween: 20, initialSlide: 1 },
               }}
             />
           </div>

@@ -13,6 +13,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 interface BreakpointConfig {
   slidesPerView: number;
   spaceBetween: number;
+  initialSlide: number;
 }
 
 interface CardsProps {
@@ -22,7 +23,6 @@ interface CardsProps {
     numberOfDays?: number;
     info?: string;
   }[];
-  initialSlide?: number;
   effect?: string;
   rotate?: number;
   stretch?: number;
@@ -35,7 +35,6 @@ interface CardsProps {
 
 const Cards: React.FC<CardsProps> = ({
   slides,
-  initialSlide = 2,
   effect = 'coverflow',
   rotate = 50,
   stretch = 0,
@@ -44,10 +43,10 @@ const Cards: React.FC<CardsProps> = ({
   slideShadows = true,
   containerClassName = 'w-[90vw] h-[60vh] flex items-center justify-center',
   breakpoints = {
-    320: { slidesPerView: 1, spaceBetween: 10 },
-    640: { slidesPerView: 2, spaceBetween: 15 },
-    1024: { slidesPerView: 3, spaceBetween: 20 },
-    1280: { slidesPerView: 4, spaceBetween: 25 },
+    320: { slidesPerView: 1, spaceBetween: 10, initialSlide: 0 },
+    640: { slidesPerView: 2, spaceBetween: 15, initialSlide: 1 },
+    1024: { slidesPerView: 3, spaceBetween: 20, initialSlide: 2 },
+    1280: { slidesPerView: 4, spaceBetween: 25, initialSlide: 2 },
   },
 }) => {
   return (
@@ -55,7 +54,6 @@ const Cards: React.FC<CardsProps> = ({
       <Swiper
         effect={effect}
         centeredSlides={true}
-        initialSlide={initialSlide}
         coverflowEffect={{
           rotate,
           stretch,
