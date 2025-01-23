@@ -20,8 +20,8 @@ const Home = async () => {
       <OurPhilosophySection />
       <OurTrips />
       <FeaturedCities />
+      <ContactUsSection />
       {/* <WhyYouChooseUs /> */}
-      {/* <ContactUsSection /> */}
     </>
   );
 };
