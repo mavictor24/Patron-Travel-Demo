@@ -3,7 +3,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
-import { Image } from '@nextui-org/image';
+import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
@@ -72,15 +72,16 @@ const Cards: React.FC<CardsProps> = ({
             key={i}
             className="rounded-xl relative shadow-lg overflow-hidden"
           >
-            <Image
-              isBlurred
-              isZoomed
-              src={slide.coverImage}
-              alt={slide.programName}
-              width={390}
-              height={350}
-              className="w-full h-full object-cover"
-            />
+            {slide.coverImage && (
+              <Image
+                src={slide.coverImage}
+                alt={slide.programName || 'Default Alt Text'}
+                width={390}
+                height={350}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            )}
             <div className="absolute w-full h-[80vh] bottom-[-20vh] bg-gradient-to-t from-black/70 to-transparent z-10" />
             <div className="absolute bottom-0 left-0 right-0 text-white text-center p-4 font-bold z-10">
               <h2>{slide.programName}</h2>
