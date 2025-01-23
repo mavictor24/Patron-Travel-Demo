@@ -92,7 +92,7 @@ const Cards: React.FC<CardsProps> = ({
               </div>
             )}
             {slide.info && (
-              <div className="absolute lg:space-y-3 space-y-2 backdrop-blur-sm w-full text-white rounded-md top-[86%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-left p-2 pb-3 px-3 font-bold z-10">
+              <div className="absolute lg:space-y-3 space-y-2 w-full text-white rounded-md top-[86%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-left p-2 pb-3 px-3 font-bold z-10">
                 <div>
                   <h4 className="text-sm line-clamp-2">{slide.info}</h4>
                 </div>
