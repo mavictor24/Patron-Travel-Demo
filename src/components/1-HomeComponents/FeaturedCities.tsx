@@ -50,7 +50,7 @@ const FeaturedCities = () => {
               depth={0} // Set custom depth
               modifier={1.5} // Set custom modifier
               slideShadows={false} // Enable slide shadows
-              containerClassName="w-[125vw] h-[40vh] md:w-[85vw] md:h-[65vh] lg:w-[80vw] lg:h-[55vh] flex items-center justify-center my-10"
+              containerClassName="w-[125vw] h-[40vh] md:w-[85vw] md:h-[65vh] lg:w-[80vw] lg:h-[55vh] flex items-center justify-center my-10 lg:-ml-0 -ml-20"
               breakpoints={{
                 320: { slidesPerView: 1.7, spaceBetween: 10 },
                 640: { slidesPerView: 2, spaceBetween: 20 },

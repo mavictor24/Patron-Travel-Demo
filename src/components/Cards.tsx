@@ -76,8 +76,8 @@ const Cards: React.FC<CardsProps> = ({
               <Image
                 src={slide.coverImage}
                 alt={slide.programName || 'Default Alt Text'}
-                width={390}
-                height={350}
+                width={1000}
+                height={1000}
                 className="w-full h-full object-cover"
                 loading="eager"
               />
