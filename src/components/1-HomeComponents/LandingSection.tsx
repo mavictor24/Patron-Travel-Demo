@@ -14,7 +14,7 @@ const LandingSection = () => {
       <div className="flex flex-col gap-9 justify-end items-start relative z-10 lg:px-28 px-5 h-full pb-48">
         <div className="space-y-9">
           <h1 className="lg:text-7xl text-5xl text-slate-100 font-bold">
-            Explore the world with <br /> exciting people
+            Explore the world with <br /> Patron Travel
           </h1>
           <h3 className="text-white lg:text-2xl text-xl w-[80%] tracking-wide">
             We help people to find ideal company for join trips
