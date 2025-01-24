@@ -67,7 +67,7 @@ export const FloatingNav = ({
             <Image src="/Logo/1.svg" alt="logo" width={900} height={900} />
           </div>
         </Link>
-        <div className="flex items-center justify-between -mb-4 lg:gap-x-12 gap-x-7">
+        <div className="flex items-center justify-between lg:-mb-4 -mb-2 lg:gap-x-12 gap-x-7">
           {navItems.slice(0, 2).map((navItem: any, idx: number) => (
             <Link
               key={`link=${idx}`}
@@ -81,7 +81,7 @@ export const FloatingNav = ({
           ))}
         </div>
         <Link href="/contactUs">
-          <button className="-mb-4 border text-base font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+          <button className="lg:-mb-4 -mb-2 border text-base font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
             <span>Contact Us</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
