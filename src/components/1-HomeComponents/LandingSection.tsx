@@ -1,9 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Button from '../Button';
-import { landingContent } from '@/Data/Data';
 
 const LandingSection = () => {
   return (
@@ -23,7 +21,7 @@ const LandingSection = () => {
           </h3>
         </div>
         <div>
-          <div className="self-start">
+          <div className="self-start hidden">
             <Button
               text="Start your trips"
               icon={

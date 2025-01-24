@@ -69,7 +69,7 @@ const About = () => {
             unmatched legacy, crafted for travelers who crave meaningful
             experiences and unforgettable adventures.
           </p>
-          <div data-aos="fade-right" data-aos-duration="800">
+          <div data-aos="fade-right" data-aos-duration="800" className="hidden">
             <Button
               text={'Explore Now'}
               className="bg-secondary before:bg-primary text-white border-none shadow-xl lg:px-7 px-20 py-3"

@@ -36,10 +36,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
+      className="w-full bg-white dark:bg-neutral-950 font-sans"
       ref={containerRef}
     >
-      <div className="lg:text-left text-center lg:pb-36 pb-20 lg:w-[65%] lg:mr-auto lg:mx-0 mx-auto py-8 px-10 rounded-3xl -mt-40 bg-white z-10 relative">
+      <div className="lg:text-left text-center pb-12 w-[100%] lg:mr-auto lg:mx-0 mx-auto lg:pt-20 pt-10 lg:px-20 rounded-3xl lg:-mt-36 -mt-44 bg-white z-10 relative">
         <BlurFade delay={0.25} inView>
           <h2
             data-aos="fade-up"
@@ -57,14 +57,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           </h2>
         </BlurFade>
       </div>
-      <div className="px-5">
-        <h2 className="text-neutral-700 dark:text-neutral-300 text-sm md:text-2xl text-left max-w-lg">
+      <div className="lg:pl-20 px-10">
+        <h2 className="text-neutral-700 dark:text-neutral-300 text-sm md:text-2xl text-left max-w-xl">
           Experience the Beauty, Diversity, and Rich History That Make Our
           Cities Truly Unforgettable
         </h2>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 md:mx-10">
         {data.map((item, index) => (
           <div
             key={index}

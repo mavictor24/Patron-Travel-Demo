@@ -1,8 +1,14 @@
+import { ContactUsSection } from '@/components/1-HomeComponents';
+import { LandingSection } from '@/components/3-ContactUsComponents';
+
 const page = () => {
   return (
-    <section className="lg:pb-20 pb-10">
-      <div className="px-2 mx-auto py-10 sm:px-6 lg:px-8 max-w-7xl bg-LightModeBG dark:bg-DarkModeBG rounded-3xl -mt-20 relative"></div>
-    </section>
+    <>
+      <LandingSection />
+      <section className="bg-white rounded-3xl -mt-14 relative z-10">
+        <ContactUsSection />
+      </section>
+    </>
   );
 };
 
