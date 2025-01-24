@@ -9,28 +9,20 @@ const Footer = () => {
     <footer className="bg-secondary">
       <div className="px-6 py-8 mx-auto">
         <div className="flex flex-col items-center text-center">
-          <Link href="#">
-            <Image
-              className="w-auto h-7"
-              src=""
-              alt="logo"
-              width={1000}
-              height={1000}
-            />
+          <Link href="/">
+            <div className="lg:w-[8rem] w-[5rem]">
+              <Image src="/Logo/1.svg" alt="logo" width={900} height={900} />
+            </div>
           </Link>
 
-          <p className="lg:max-w-md max-w-xs mx-auto mt-4 text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-
-          <div className="flex mt-4 gap-x-10 sm:flex-row sm:items-center sm:justify-center">
+          {/* <div className="flex mt-4 gap-x-10 sm:flex-row sm:items-center sm:justify-center">
             <Link href="" className="">
               <FaFacebook className="hover:text-primary/90 text-3xl text-white" />
             </Link>
             <Link href="" className="">
               <FaInstagram className="hover:text-primary/90 text-3xl text-white" />
             </Link>
-          </div>
+          </div> */}
         </div>
 
         <hr className="my-10 border-white" />
