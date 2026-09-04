@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink-900 antialiased;
+  }
+
+  ::selection {
+    @apply bg-teal-200 text-ink-950;
+  }
+
+  :focus-visible {
+    outline-color: theme('colors.teal.500');
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-sand-50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-ink-200;
+}
