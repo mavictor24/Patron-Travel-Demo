@@ -9,6 +9,8 @@ import {
 import Link from 'next/link';
 import { cn } from '@/libs/utils';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { ToggleMenu } from '../ToggleComponents';
 
 export const FloatingNav = ({
   navItems,
@@ -45,6 +47,10 @@ export const FloatingNav = ({
     }
   });
 
+  const pathname = usePathname();
+
+  const isActive = (href: string) => (pathname === href ? 'active' : '');
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -58,17 +64,17 @@ export const FloatingNav = ({
           duration: 0.2, // Smooth transition
         }}
         className={cn(
-          'flex lg:w-[47%] w-full fixed lg:top-5 top-0 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] lg:rounded-full rounded-b-3xl dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] py-2 pb-3 lg:px-14 px-2 items-center justify-around lg:gap-x-10 gap-x-8',
+          'flex lg:w-[60%] w-full fixed lg:top-3 top-0 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] lg:rounded-full rounded-b-3xl dark:bg-black bg-[whitesmoke] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] py-2 pb-3 lg:px-14 px-2 items-center justify-around lg:gap-x-10 gap-x-8',
           className
         )}
       >
         <Link href="/">
-          <div className="lg:w-[8rem] w-[5rem]">
+          <div className="lg:w-[8rem] w-[6rem]">
             <Image src="/Logo/1.svg" alt="logo" width={900} height={900} />
           </div>
         </Link>
-        <div className="flex items-center justify-between lg:-mb-4 -mb-2 lg:gap-x-12 gap-x-7">
-          {navItems.slice(0, 2).map((navItem: any, idx: number) => (
+        <div className="lg:flex hidden items-center justify-between lg:-mb-4 -mb-2 lg:gap-x-12 gap-x-7">
+          {navItems.slice(0, 3).map((navItem: any, idx: number) => (
             <Link
               key={`link=${idx}`}
               href={navItem.href}
@@ -80,7 +86,12 @@ export const FloatingNav = ({
             </Link>
           ))}
         </div>
-        <Link href="/contactUs">
+
+        <div className="flex items-center gap-5 lg:hidden">
+          <ToggleMenu />
+        </div>
+
+        <Link href="/contactUs" className="hidden lg:block">
           <button className="lg:-mb-4 -mb-2 border text-base font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
             <span>Contact Us</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />

@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary">
+    <footer className="bg-secondary mt-32">
       <div className="px-6 py-8 mx-auto">
         <div className="flex flex-col items-center text-center">
           <Link href="/">

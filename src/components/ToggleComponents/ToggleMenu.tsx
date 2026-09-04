@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { HiMenuAlt3, HiOutlineX } from 'react-icons/hi';
-import Image from 'next/image';
 import { Links } from '@/Data/Data';
 
 const ToggleMenu = () => {
@@ -71,15 +70,39 @@ const ToggleMenu = () => {
       },
     },
   };
+
   return (
     <>
       <button
         title="toggle"
-        className="text-3xl lg:hidden transition-transform transform hover:scale-110"
+        className="relative flex items-center justify-center w-12 h-12 rounded-full lg:hidden"
         onClick={toggleMenu}
       >
-        <HiMenuAlt3 />
+        <AnimatePresence mode="wait">
+          {!showMenu ? (
+            <motion.div
+              key="menu"
+              initial={{ rotate: 0, opacity: 1 }}
+              animate={{ rotate: 360, opacity: 1 }}
+              exit={{ rotate: 180, opacity: 0 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            >
+              <HiMenuAlt3 className="text-3xl" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="close"
+              initial={{ rotate: 0, opacity: 0 }}
+              animate={{ rotate: 360, opacity: 1 }}
+              exit={{ rotate: 180, opacity: 0 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            >
+              <HiOutlineX className="text-3xl" />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </button>
+
       <AnimatePresence>
         {showMenu && (
           <motion.div
@@ -87,37 +110,15 @@ const ToggleMenu = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen py-10 origin-top bg-[whitesmoke] dark:bg-zinc-950 dark:text-[whitesmoke] text-primary z-[9999]"
+            className="fixed left-0 top-0 w-full h-[60vh] rounded-b-3xl py-10 origin-top bg-[whitesmoke] text-black z-[-10]"
           >
             <div className="flex h-full flex-col">
-              <div className="flex justify-between px-10">
-                <Link
-                  onClick={toggleMenu}
-                  href="/"
-                  className="flex items-center"
-                >
-                  <Image
-                    src={`/MCC-LOGO.png`}
-                    alt="Modern Construction Company"
-                    width={70}
-                    height={70}
-                  />
-                </Link>
-                <button
-                  title="toggle"
-                  className="text-3xl lg:hidden transition-transform transform hover:scale-110"
-                  onClick={toggleMenu}
-                >
-                  <HiOutlineX />
-                </button>
-              </div>
-
               <motion.div
                 variants={containerVars}
                 initial="initial"
                 animate="open"
                 exit="initial"
-                className="flex flex-col h-full justify-center font-roboto items-start pl-6 gap-7"
+                className="flex flex-col h-full justify-center font-roboto items-center gap-7"
               >
                 {Links.map((links) => {
                   const isActiveLink = isActive(links.href);
@@ -130,10 +131,8 @@ const ToggleMenu = () => {
                         <Link
                           onClick={toggleMenu}
                           href={links.href}
-                          className={`relative items-center flex hover:text-secondary dark:hover:text-red-500 transition-all ${
-                            isActiveLink
-                              ? 'text-secondary dark:text-red-500'
-                              : ''
+                          className={`relative items-center flex hover:text-primary transition-all ${
+                            isActiveLink ? 'text-primary' : ''
                           }`}
                         >
                           {links.title}
@@ -143,14 +142,6 @@ const ToggleMenu = () => {
                   );
                 })}
               </motion.div>
-              <p className="w-full mt-8 text-sm text-center dark:text-gray-100 md:mt-0 md:w-auto">
-                © Copyright 2025, All Rights Reserved by{' '}
-                <br className="block lg:hidden" />
-                <span className="font-semibold font-inter">
-                  {' '}
-                  Modern Construction Company
-                </span>
-              </p>
             </div>
           </motion.div>
         )}

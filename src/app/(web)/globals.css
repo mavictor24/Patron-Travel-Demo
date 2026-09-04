@@ -7,6 +7,28 @@
   }
 }
 
+:root {
+  --vh: 1vh; /* Fallback value */
+}
+
+html,
+body {
+  height: calc(var(--vh) * 100); /* Use the fixed viewport height */
+}
+
+/* Use the --vh variable for heights */
+.full-height {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+#__next {
+  height: 100%; /* Ensure full height for the Next.js app wrapper */
+}
+
+.h-screen {
+  height: calc(var(--vh) * 100); /* Tailwind utility for full-height */
+}
+
 /* Custom class to hide scrollbar */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
@@ -50,7 +72,7 @@
 }
 
 .active {
-  @apply border-b-[1.2px] border-spacing-12 border-secondary dark:text-red-500 text-secondary font-bold;
+  @apply border-b-[1.2px] border-spacing-12 border-secondary dark:text-red-500 text-primary font-bold;
 }
 
 .Landing-bg {
@@ -111,7 +133,7 @@ p {
 }
 
 .img {
-  @apply object-cover w-full h-full;
+  @apply object-cover w-full h-full rounded-[3rem];
 }
 
 .scale-animation {
@@ -374,4 +396,14 @@ p {
   100% {
     transform: translateX(15px);
   }
+}
+
+/* Custom styles for thumbnails */
+.thumbnail-swiper .swiper-slide {
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.thumbnail-swiper .swiper-slide-thumb-active {
+  opacity: 1;
 }

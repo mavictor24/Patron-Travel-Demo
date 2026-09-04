@@ -16,6 +16,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+    './node_modules/swiper/**/*.{js,ts,jsx,tsx}',
 
     // Or if using `src` directory:
     './src/**/*.{js,ts,jsx,tsx,mdx}',
@@ -24,11 +25,14 @@ module.exports = {
   plugins: [nextui()],
   theme: {
     extend: {
+      height: {
+        screen: 'calc(var(--vh) * 100)', // Full height with the fix
+      },
       colors: {
         text: '#030303',
         // LightModeBG: '#faf9f6',
         // DarkModeBG: '#0d1215',
-        primary: '#00ADB4',
+        primary: '#2DC6BB',
         secondary: '#222933',
         accent: '#000000',
       },
@@ -46,10 +50,25 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        swipeLeft: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        swipeRight: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'swipe-left': 'swipeLeft 1s ease-out forwards',
+        'swipe-right': 'swipeRight 1s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
       },
     },
   },

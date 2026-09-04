@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Roboto, Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
 import { Header, Footer } from '@/components';
-import { AOSProvider } from '@/components/Providers';
+import { AOSProvider, ViewportProvider } from '@/components/Providers';
 import { NextUIProvider } from '@nextui-org/react';
 import './globals.css';
 
@@ -25,7 +25,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Patron Travel',
-  description: '',
+  description: 'Explore the world with Patron Travel',
 };
 
 export default function RootLayout({
@@ -36,17 +36,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable}`}>
       <head>
-        <link rel="shortcut icon" href="" type="image/png" />
+        <link rel="shortcut icon" href="/Logo/6.svg" type="image/png" />
       </head>
       <body className={roboto.className}>
         <NextUIProvider>
           <AOSProvider>
-            <main className="font-normal">
-              <Header />
-              {children}
-              <Footer />
-            </main>
-            <Toaster />
+            <ViewportProvider>
+              <main className="font-normal">
+                <Header />
+                {children}
+                <Footer />
+              </main>
+              <Toaster />
+            </ViewportProvider>
           </AOSProvider>
         </NextUIProvider>
       </body>
