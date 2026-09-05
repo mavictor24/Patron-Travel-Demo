@@ -24,6 +24,15 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-ink-950/70 via-transparent to-ink-950/30" />
       </div>
 
+      <Image
+        src="/brand/patron-travel-mark.svg"
+        alt=""
+        aria-hidden
+        width={205}
+        height={374}
+        className="pointer-events-none absolute -right-10 top-1/2 hidden h-[85vh] w-auto -translate-y-1/2 opacity-[0.07] brightness-0 invert lg:block"
+      />
+
       <Container className="relative z-10 pb-20 pt-40 sm:pb-24">
         <motion.p
           initial={{ opacity: 0, y: 16 }}

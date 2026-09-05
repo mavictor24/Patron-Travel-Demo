@@ -47,11 +47,11 @@ export function Header() {
           <Image
             src="/brand/patron-travel-logo.svg"
             alt={site.name}
-            width={160}
-            height={64}
+            width={375}
+            height={140}
             priority
             className={cn(
-              'h-10 w-auto transition-all duration-300 sm:h-11',
+              'h-11 w-auto transition-all duration-300 sm:h-12',
               !solid && 'brightness-0 invert'
             )}
           />
