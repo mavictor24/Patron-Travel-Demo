@@ -17,9 +17,9 @@ export function Footer() {
             <Image
               src="/brand/patron-travel-logo.svg"
               alt={site.name}
-              width={160}
-              height={64}
-              className="h-10 w-auto brightness-0 invert"
+              width={375}
+              height={140}
+              className="h-11 w-auto brightness-0 invert"
             />
           </Link>
           <p className="mt-5 max-w-xs text-sm leading-relaxed">{site.description}</p>
